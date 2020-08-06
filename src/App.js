@@ -4,12 +4,22 @@ import {useForm} from 'react-hook-form';
 import axios from 'axios';
 function App() {
 
-  const [state, setstate] = useState({data:'',message:''})
-  const {register, handleSubmit} = useForm();
-  let names = [];
+  // component state record message and data from api for user
+
+  const [state, setstate] = useState({data:'',message:''}) 
+  
+  // component state record message and data from api for user
 
 
 
+
+  const {register, handleSubmit} = useForm(); // form referal variable
+
+
+  let names = []; // recotds the name of the notes or cash amounts 
+
+
+// onsubmit : Form handler send POST request to api
   const onSubmit = (data)=>{
     var passedObject = {"userName":data.userName,"cardNUmber":parseInt(data.cardNumber),"cvv":parseInt(data.cvv),"pin":parseInt(data.pin),"amount":parseInt(data.amount),"denomination":data.denomination}
     axios.post('https://basic-atm-api-gagan.herokuapp.com/',passedObject)
@@ -21,6 +31,10 @@ function App() {
       console.log(err)
     })
   }
+// onsubmit : Form handler send POST request to api
+
+
+
   return (
     <>
     <form onSubmit={handleSubmit(onSubmit)}>
