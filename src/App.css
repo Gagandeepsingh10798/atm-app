@@ -5,7 +5,9 @@ input,select {
 
 }
 form{
-    padding: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top:50px;
     width: 25%;
     margin:auto;
 }
